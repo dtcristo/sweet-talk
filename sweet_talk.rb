@@ -4,8 +4,8 @@ require 'coffee-script'
 require 'haml'
 require 'json'
 
-$messages = [{ time: "earlier", name: "David", message: "Hello Lisa!" },
-             { time: "later", name: "Lisa", message: "Hello David!" }]
+$messages = [{ time: "15/02/15 22:48:43", name: "David", message: "Hello Lisa!" },
+             { time: "15/02/15 22:49:22", name: "Lisa", message: "Hello David!" }]
 
 # Handle conversion of CoffeeScript to JavaScript
 get '/coffee/*.js' do
@@ -22,7 +22,7 @@ get '/messages' do
 end
 
 post '/messages' do
-  time = Time.now.strftime "%Y-%m-%d %H:%M:%S"
+  time = Time.now.strftime "%d/%m/%y %H:%M:%S"
   name = params[:name]
   text = params[:text]
   message = { time: time, name: name, text: text }
