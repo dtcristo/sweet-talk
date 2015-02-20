@@ -1,0 +1,53 @@
+body {
+  overflow: hidden;
+  background: #EEEEEE;
+}
+
+#content {
+  height: 100%;
+}
+
+#messages {
+  background: white;
+  margin: 0px;
+  position: absolute;
+  top: 70px;
+  bottom: 54px;
+  left: 15px;
+  right: 15px;
+  overflow-y: scroll;
+}
+
+#text {
+}
+
+#controls {
+  height: 34px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+#name-group {
+  float: left;
+  display: inline-block;
+}
+
+#name-group label {
+  display: inline;
+}
+
+#name-group input {
+  display: inline;
+}
+
+#text-group {
+  overflow: hidden;
+  display: block;
+}
+
+#send {
+  float: right;
+  display: inline-block;
+}

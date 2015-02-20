@@ -1,11 +1,16 @@
 require 'sinatra'
 require 'sinatra/json'
+require 'sinatra-websocket'
 require 'coffee-script'
 require 'haml'
 require 'json'
 
-$messages = [{ time: "15/02/15 22:48:43", name: "David", message: "Hello Lisa!" },
-             { time: "15/02/15 22:49:22", name: "Lisa", message: "Hello David!" }]
+set :bind, '0.0.0.0'
+set :server, 'thin'
+set :sockets, []
+
+$messages = [{ "name" => "David", "text" => "Hello Lisa!", "time" => 1424397388},
+             { "name" => "Lisa", "text" => "Hello David!", "time" => 1424397411}]
 
 # Handle conversion of CoffeeScript to JavaScript
 get '/coffee/*.js' do
@@ -14,20 +19,41 @@ get '/coffee/*.js' do
 end
 
 get '/' do
-  erb :index
+  if !request.websocket?
+    erb :index
+  else
+    request.websocket do |ws|
+      ws.onopen do
+        settings.sockets << ws
+      end
+      ws.onmessage do |query_string|
+        # Build message from the query_string
+        message = Rack::Utils.parse_nested_query query_string
+        # Add timestamp
+        message["time"] = Time.now.to_i
+        # Save the message
+        save_message message
+        # Push the message out to users
+        push_message message
+      end
+      ws.onclose do
+        settings.sockets.delete ws
+      end
+    end
+  end
 end
 
-get '/messages' do
-  json $messages
-end
-
-post '/messages' do
-  time = Time.now.strftime "%d/%m/%y %H:%M:%S"
-  name = params[:name]
-  text = params[:text]
-  message = { time: time, name: name, text: text }
+def save_message(message)
+  # Save the message into the array
   $messages << message
+end
 
-  # Return the new message as JSON
-  json message
+def push_message(message)
+  EM.next_tick do
+    settings.sockets.each do |ws|
+      # Send the message as JSON to the WebSockets
+      puts json(message)
+      ws.send json(message)
+    end
+  end
 end
