@@ -1,4 +1,7 @@
 $(document).ready ->
+  # Scroll div#messages to bottom
+  $('#messages').scrollTop($('#messages').prop('scrollHeight'))
+
   # Establish a WebSocket with the server
   ws = new WebSocket('ws://' + window.location.host + window.location.pathname)
   ws.onmessage = (event) ->
