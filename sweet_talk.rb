@@ -20,7 +20,7 @@ end
 
 get '/' do
   if !request.websocket?
-    erb :index
+    haml :index
   else
     request.websocket do |ws|
       ws.onopen do
