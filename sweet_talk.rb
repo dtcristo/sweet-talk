@@ -44,6 +44,8 @@ get '/' do
 end
 
 def save_message(message)
+  # Log the message
+  puts message
   # Save the message into the array
   $messages << message
 end
