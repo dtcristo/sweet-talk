@@ -11,35 +11,26 @@ body {
   background: white;
   margin: 0px;
   position: absolute;
-  top: 70px;
+  top: 57px;
   bottom: 54px;
   left: 15px;
   right: 15px;
   overflow-y: scroll;
 }
 
-#text {
-}
-
 #controls {
   height: 34px;
   position: absolute;
   bottom: 10px;
-  left: 10px;
-  right: 10px;
+  left: 0px;
+  right: 0px;
 }
 
 #name-group {
+  width: 120px;
   float: left;
+  margin-right: 5px;
   display: inline-block;
-}
-
-#name-group label {
-  display: inline;
-}
-
-#name-group input {
-  display: inline;
 }
 
 #text-group {
@@ -49,5 +40,6 @@ body {
 
 #send {
   float: right;
+  margin-left: 5px;
   display: inline-block;
 }
