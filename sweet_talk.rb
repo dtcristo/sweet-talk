@@ -52,7 +52,6 @@ def push_message(message)
   EM.next_tick do
     settings.sockets.each do |ws|
       # Send the message as JSON to the WebSockets
-      puts json(message)
       ws.send json(message)
     end
   end
