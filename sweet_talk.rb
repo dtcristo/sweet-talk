@@ -9,8 +9,8 @@ set :bind, '0.0.0.0'
 set :server, 'thin'
 set :sockets, []
 
-$messages = [{ "name" => "David", "text" => "Hello Lisa!", "time" => 1424397388},
-             { "name" => "Lisa", "text" => "Hello David!", "time" => 1424397411}]
+# Store all messages here
+$messages = []
 
 # Handle conversion of CoffeeScript to JavaScript
 get '/coffee/*.js' do
