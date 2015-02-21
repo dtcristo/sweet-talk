@@ -4,6 +4,8 @@ $(document).ready ->
 
   # Establish a WebSocket with the server
   ws = new WebSocket('ws://' + window.location.host + window.location.pathname)
+  ws.onopen = () ->
+    return
   ws.onmessage = (event) ->
     # Parse the JSON string into a message
     message = $.parseJSON event.data
@@ -13,8 +15,10 @@ $(document).ready ->
     $(messageHtml).appendTo('#messages').effect('highlight')
     # Scroll div#messages to bottom
     $('#messages').scrollTop($('#messages').prop('scrollHeight'))
+    return
   ws.onclose = () ->
     alert("Connection with the server has been lost.")
+    return
 
   $('form').submit (event) ->
     event.preventDefault()
@@ -24,3 +28,6 @@ $(document).ready ->
     ws.send $(this).serialize()
     # Clear the value from text input
     $('#text').val ""
+    # Set focus to text input
+    $('#text').focus()
+    return
