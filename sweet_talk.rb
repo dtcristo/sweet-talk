@@ -38,6 +38,10 @@ end
 def process_query(query_string)
   # Build message from the query_string
   message = Rack::Utils.parse_nested_query query_string
+  # Easter egg
+  if message['text'].include? '<script>'
+    message['text'] = 'Nice try!'
+  end
   # Strip unwanted params and escape HTML
   message = {'name' => CGI::escapeHTML(message['name']), 'text' => CGI::escapeHTML(message['text'])}
   # Add timestamp
