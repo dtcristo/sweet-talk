@@ -26,20 +26,26 @@ get '/' do
         settings.sockets << ws
       end
       ws.onmessage do |query_string|
-        # Build message from the query_string
-        message = Rack::Utils.parse_nested_query query_string
-        # Add timestamp
-        message["time"] = Time.now.to_i
-        # Save the message
-        save_message message
-        # Push the message out to users
-        push_message message
+        process_query query_string
       end
       ws.onclose do
         settings.sockets.delete ws
       end
     end
   end
+end
+
+def process_query(query_string)
+  # Build message from the query_string
+  message = Rack::Utils.parse_nested_query query_string
+  # Strip unwanted params and escape HTML
+  message = {'name' => CGI::escapeHTML(message['name']), 'text' => CGI::escapeHTML(message['text'])}
+  # Add timestamp
+  message['time'] = Time.now.to_i
+  # Save the message
+  save_message message
+  # Push the message out to users
+  push_message message
 end
 
 def save_message(message)
