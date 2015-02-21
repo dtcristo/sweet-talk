@@ -1,29 +1,17 @@
-!!!
-%html
-  %head
-    %title Sweet Talk
-    -# jQuery
-    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"}
-    %link{href: "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css", rel: "stylesheet"}
-    %script{src: "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.js"}
-    -# Bootstrap
-    %link{href: "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.css", rel: "stylesheet"}
-    %link{href: "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.css", rel: "stylesheet"}
-    %script{src: "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.js"}
-    -# local
-    %link{href: "/css/index.css", rel: "stylesheet"}
-    %script{src: "/coffee/index.js"}
-  %body
-    #content.container-fluid
-      #header.container-fluid
-        %h3 Sweet Talk
-      #messages.well
-        - $messages.each do |message|
-          = "<p><b>#{message['name']}:</b> #{message['text']}</p>"
-      #controls.container-fluid
-        %form
-          #name-group
-            %input#name.form-control{name: "name", type: "text", value: "Guest", tabindex: "1"}
-          %input#send.btn.btn-default{type: "submit", value: "Send", tabindex: "3"}
-          #text-group
-            %input#text.form-control{name: "text", type: "text", autocomplete: "off", tabindex: "2"}
+-# Index scripts and styles
+%link{href: "/css/index.css", rel: "stylesheet"}
+%script{src: "/coffee/index.js"}
+-# Content
+#content.container-fluid
+  #header.container-fluid
+    %h3 Sweet Talk
+  #messages.well
+    - $messages.each do |message|
+      = "<p><b>#{message['name']}:</b> #{message['text']}</p>"
+  #controls.container-fluid
+    %form
+      #name-group
+        %input#name.form-control{name: "name", type: "text", value: "Guest", tabindex: "1"}
+      %input#send.btn.btn-default{type: "submit", value: "Send", tabindex: "3"}
+      #text-group
+        %input#text.form-control{name: "text", type: "text", autocomplete: "off", tabindex: "2"}
