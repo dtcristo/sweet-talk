@@ -1,11 +1,11 @@
 -# Index scripts and styles
-%link{href: "/index.css", rel: "stylesheet"}
-%script{src: "/index.js"}
+%link{href: '/index.css', rel: 'stylesheet'}
+%script{src: '/index.js'}
 -# Content
 #content.container-fluid
   #header.container-fluid
     %h3
-      %img#logo{src: "/sweet_talk_32.png"}
+      %img#logo{src: '/sweet_talk_32.png'}
       Sweet Talk
   #messages.well
     - $messages.each do |message|
@@ -13,7 +13,7 @@
   #controls.container-fluid
     %form
       #name-group
-        %input#name.form-control{name: "name", type: "text", value: "Guest", tabindex: "1"}
-      %input#send.btn.btn-default{type: "submit", value: "Send", tabindex: "3"}
+        %input#name.form-control{name: 'name', type: 'text', value: 'Guest', tabindex: '1'}
+      %input#send.btn.btn-default{type: 'submit', value: 'Send', tabindex: '3'}
       #text-group
-        %input#text.form-control{name: "text", type: "text", autocomplete: "off", tabindex: "2"}
+        %input#text.form-control{name: 'text', type: 'text', autocomplete: 'off', tabindex: '2'}
