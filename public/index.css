@@ -7,11 +7,15 @@ body {
   height: 100%;
 }
 
+#logo {
+  vertical-align: text-bottom;
+}
+
 #messages {
   background: white;
   margin: 0px;
   position: absolute;
-  top: 57px;
+  top: 62px;
   bottom: 54px;
   left: 15px;
   right: 15px;

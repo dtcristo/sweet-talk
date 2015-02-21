@@ -12,9 +12,9 @@ set :sockets, []
 $messages = []
 
 # Handle conversion of CoffeeScript to JavaScript
-get '/coffee/*.js' do
+get '/*.js' do
   filename = params[:splat].first
-  coffee "../public/coffee/#{filename}".to_sym
+  coffee "../public/#{filename}".to_sym
 end
 
 get '/' do

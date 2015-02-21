@@ -1,10 +1,12 @@
 -# Index scripts and styles
-%link{href: "/css/index.css", rel: "stylesheet"}
-%script{src: "/coffee/index.js"}
+%link{href: "/index.css", rel: "stylesheet"}
+%script{src: "/index.js"}
 -# Content
 #content.container-fluid
   #header.container-fluid
-    %h3 Sweet Talk
+    %h3
+      %img#logo{src: "/sweet_talk_32.png"}
+      Sweet Talk
   #messages.well
     - $messages.each do |message|
       = "<p><b>#{message['name']}:</b> #{message['text']}</p>"
