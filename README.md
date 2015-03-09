@@ -27,4 +27,5 @@ You're all set for some sweet talk.
 ## Todo
 
 * Multiple chat rooms (create your own)
-* Per user authentication
+* Per-user authentication
+* Persist messages
