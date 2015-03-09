@@ -7,7 +7,7 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     cookiejar (0.3.2)
-    daemons (1.1.9)
+    dotenv (2.0.0)
     em-http-request (1.1.2)
       addressable (>= 2.3.4)
       cookiejar
@@ -34,6 +34,8 @@ GEM
     http_parser.rb (0.6.0)
     json (1.8.2)
     multi_json (1.10.1)
+    puma (2.11.1)
+      rack (>= 1.1, < 2.0)
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
@@ -41,10 +43,6 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    thin (1.6.3)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0)
-      rack (~> 1.0)
     tilt (1.4.1)
     websocket-driver (0.5.3)
       websocket-extensions (>= 0.1.0)
@@ -55,8 +53,9 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
+  dotenv
   faye
   haml
   json
+  puma
   sinatra
-  thin
