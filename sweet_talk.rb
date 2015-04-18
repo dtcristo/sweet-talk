@@ -23,7 +23,6 @@ end
 def process_message(message)
   # Easter egg
   message['text'] = 'Nice try!' if message['text'].include? '<script>'
-
   # Strip unwanted params and escape HTML
   message = { 'name' => CGI.escapeHTML(message['name']),
               'text' => CGI.escapeHTML(message['text']) }
