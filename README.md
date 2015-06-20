@@ -2,6 +2,8 @@
 
 A simple chatroom.
 
+![Screenshot](https://raw.github.com/dtcristo/sweet_talk/master/assets/screenshot.png)
+
 ## Installation
 
 Clone the repo:
