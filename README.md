@@ -1,6 +1,6 @@
 # Sweet Talk
 
-A simple chatroom.
+A simple chatroom. Sweet Talk is built on the minimal Ruby web framework [Sinatra](http://www.sinatrarb.com/) and uses the [Faye](http://faye.jcoglan.com/) publish-subscribe messaging system.
 
 ![Screenshot](https://raw.github.com/dtcristo/sweet_talk/master/assets/screenshot.png)
 
