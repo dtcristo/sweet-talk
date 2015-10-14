@@ -8,8 +8,8 @@ A simple chatroom. Sweet Talk is built on [Sinatra](http://www.sinatrarb.com/) (
 
 Clone the repo:
 
-    $ git clone https://github.com/dtcristo/sweet_talk.git
-    $ cd sweet_talk
+    $ git clone https://github.com/dtcristo/sweet-talk.git
+    $ cd sweet-talk
 
 Copy the example environment configuration and fill it out:
 
