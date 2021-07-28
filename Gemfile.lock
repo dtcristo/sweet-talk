@@ -34,9 +34,10 @@ GEM
     http_parser.rb (0.6.0)
     json (1.8.3)
     multi_json (1.11.1)
-    puma (2.11.3)
-      rack (>= 1.1, < 2.0)
-    rack (1.6.4)
+    nio4r (2.5.7)
+    puma (4.3.8)
+      nio4r (~> 2.0)
+    rack (1.6.13)
     rack-protection (1.5.3)
       rack
     sinatra (1.4.6)
