@@ -1,22 +1,23 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.8)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    cookiejar (0.3.2)
+    cookiejar (0.3.3)
     dotenv (2.0.2)
-    em-http-request (1.1.2)
+    em-http-request (1.1.7)
       addressable (>= 2.3.4)
-      cookiejar
+      cookiejar (!= 0.3.1)
       em-socksify (>= 0.3)
       eventmachine (>= 1.0.3)
       http_parser.rb (>= 0.6.0)
-    em-socksify (0.3.0)
+    em-socksify (0.3.2)
       eventmachine (>= 1.0.0.beta.4)
-    eventmachine (1.0.7)
+    eventmachine (1.2.7)
     execjs (2.5.2)
     faye (1.1.1)
       cookiejar (>= 0.3.0)
@@ -31,9 +32,10 @@ GEM
       websocket-driver (>= 0.5.1)
     haml (4.0.6)
       tilt
-    http_parser.rb (0.6.0)
+    http_parser.rb (0.7.0)
     json (1.8.3)
     multi_json (1.11.1)
+    public_suffix (4.0.6)
     puma (2.11.3)
       rack (>= 1.1, < 2.0)
     rack (1.6.4)
